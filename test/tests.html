@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS tests</title>
+<link rel="stylesheet" href="qunit.css">
+</head>
+<body>
+  <div id="qunit">
+
+  </div>
+  <div id="qunit-fixture">
+    <div id="weather" class="weather">
+            Current temperature is <span id="displayed_temperature">42</span> <span id="temperature_units"> degrees Fahrenheit.</span><br>
+      <input type="radio" name="unit" value="Kelvin">Kelvin<br>
+      <input type="radio" name="unit" value="Celsius">Celsius<br>
+      <input type="radio" name="unit" value="Fahrenheit" checked>Fahrenheit<br>
+
+
+      <input type="submit" value="Convert">
+    </div>
+  </div>
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="../details.js"></script>
+  <script src="qunit.js"></script>
+  <script src="http://sinonjs.org/releases/sinon-1.12.2.js"></script>
+  <script src="test.js"></script>
+  <script type="text/javascript" charset="utf-8">
+  window.ktof=function(tempk){return Math.round((tempk - 273.15)* 1.8000+ 32.00,-1); };
+  window.ctof=function(tempc){return Math.round((tempc*1.800)+32.00,-1); };
+  window.ftoc=function(tempf){return Math.round((tempf-32)/1.8000,-1); };
+      window.handleConversion = function(from, to, value) {
+        if(from === 'Farhenheit') {
+          if(to === 'Farhenheit') {
+            return value;
+          } else if(to === 'Celsius') {
+            return ftoc(value);
+          } else throw Error("unknown to value");
+        } else if(from === 'Celsius') {
+          if(to === 'Farhenheit') {
+            return ctof(value);
+          } else if(to === 'Celsius') {
+            return value;
+          } else throw Error("unknown to value");
+
+        } else throw Error("unknown from value");
+      }
+  </script>
+
+</body>
+</html>
