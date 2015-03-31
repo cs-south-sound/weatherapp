@@ -42,17 +42,16 @@ $(document).ready(function(){
     var ktof = function(tempk){return Math.round((tempk - 273.15)* 1.8000+ 32.00,-1); };
     var wtag = $('.weather');
     var debug = $('.debug');
-/* be nice during debugging other scripts, do not hit open weathermap.org too often
-    $.getJSON("http://openweathermap.org//data/2.5/weather?q=tacoma,wa",function(wdata){
-        //debug.text(JSON.stringify(wdata));//debug only        
+/* be nice during debugging other scripts, do not access open weathermap.org too often*/
+    $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=tacoma,US",function(wdata){
         //console.log("returned data: ");//debug only
+        //console.log(JSON.stringify(wdata));//debug only
+        //debug.text(JSON.stringify(wdata));//debug only response into web page
         var description = wdata['weather'][0]['main']
-        //['desctiption'];
         var temp = wdata['main']['temp']
         var locationName = wdata['name']
-        wtag.html(' conditions at '+locationName+' are '+description+' temp is '+ktof(temp)+"f");
+        wtag.html(' Openweathermap.org conditions in ' + locationName + ' are ' + description + ', temperature is <span id="displayed_temperature">' + ktof(temp) + '</span><span id="temperature_units"> Fahrenheit.</span>');
     });
-*/
 });
 </script>
 
@@ -118,9 +117,6 @@ $(document).ready(function(){
 <div class="bs-docs-section">
 
   <h1 id="current_weather" class="page-header">Current weather</h1>
-
-  <p>A lightweight, flexible component that can optionally extend the entire viewport to showcase key content on your site.</p>
-
   <!--Implementing the jumbotron class from Bootstrap-->
   <!--##############################################################################-->
   <div class="bs-example" data-example-id="simple-jumbotron">
@@ -133,9 +129,9 @@ $(document).ready(function(){
       -->
       </a><div id="awcc1422729619977" class="aw-widget-current"  data-locationkey="41598_PC" data-unit="f" data-language="en-us" data-useip="false" data-uid="awcc1422729619977"></div>
 
-      <!--  Comment out during debugging to be nice to accuweather
+      <!--  Comment out during debugging to be nice to accuweather -->
        <script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
-      -->
+
     </div><!--end class=jumbotron-->
   </div><!--end class=bs-example-->
   <!--##############################################################################-->
@@ -148,26 +144,25 @@ $(document).ready(function(){
 
   <h1 id="temperature_conversions" class="page-header">Temperature Conversions</h1>
 
-  <p>A lightweight, flexible component that can optionally extend the entire viewport to showcase key content on your site.</p>
-
   <!--Implementing the jumbotron class from Bootstrap-->
   <!--##############################################################################-->
   <div class="bs-example" data-example-id="simple-jumbotron">
 
     <div class="jumbotron">
+      <div class="weather"></div><!--document ready script places current weather here-->
 
-    <div id="conversion_form" class="weather">
-            Current temperature is <span id="displayed_temperature">42</span> <span id="temperature_units"> degrees Fahrenheit.</span><br>
+    <div id="conversion_form">
       <input type="radio" name="unit" value="Kelvin">Kelvin<br>
       <input type="radio" name="unit" value="Celsius">Celsius<br>
       <input type="radio" name="unit" value="Fahrenheit" checked>Fahrenheit<br>
-
-
       <input class="btn btn-primary btn-lg" role="button" type="submit" value="Convert">
 
     </div>
 
-    <div  class="debug"> 
+
+
+
+    <div  class="debug">
     </div>
 
 
@@ -181,7 +176,7 @@ $(document).ready(function(){
 
 </div><!--end class=bs-docs-section-->
 
-<!--output div for troubleshooting validate script $.ajax command result-->  
+<!--output div for troubleshooting validate script $.ajax command result-->
 <div id="log"></div>
 
 
