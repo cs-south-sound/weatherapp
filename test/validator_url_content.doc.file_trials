@@ -1,0 +1,33 @@
+https://validator.nu/?doc=http%3A%2F%2Fvividventures.biz&out=json
+https://validator.nu/?out=json&doc=http%3A%2F%2Fvividventures.biz
+
+
+================================================================================================
+
+Try:
+-----
+https://validator.nu/?out=json&laxtype=yes&parser=html5&doc=<!DOCTYPE html><html><head><title>Test</title></head><body><p></p></body></html>
+
+Failure message:
+-----------------
+{"url":"<!DOCTYPE html><html><head><title>Test</title></head><body><p></p></body></html>
+","messages":[{"type":"non-document-error","subType":"io","message":"Not an absolute URI."}]}
+================================================================================================
+Try:
+-----
+https://validator.nu/?out=json&laxtype=yes&parser=html5&content=<!DOCTYPE html><html><head><title>Test</title></head><body><p></p></body></html>
+
+Failure message: Error 400, No input document
+-----------------
+
+
+
+Try (almost the same except URL encoded the content):
+-----
+https://validator.nu/?out=json&laxtype=yes&parser=html5&content=%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3ETest%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%3E%3Cp%3E%3C%2Fp%3E%3C%2Fbody%3E%3C%2Fhtml%3E
+
+Failure message:  Error 400, No input document
+-----------------
+
+================================================================================================
+
