@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="UTF-8">
+    <!--This template page is intended to have improper HTML syntax which should be caught
+        by the html5 validation test.  If the page file is local some errors will be
+        fixed by the browser before the test is run.  If the file is from a web
+        server then the URL of the page will be sent to the validation webservice
+        thereby bypassing the browser.-->
+	  <title>Failed HTML Tag syntax</title>
+   </head>
+
+   <body>
+   <p>Begin the ordered list</p>
+   <ol>
+     <ul><!--This should produce a validation error, since the ul-tag is not
+             allowed inside ol-tag, some browsers render the page anyway which
+             makes it seem visually okay. -->
+	     <li>ul first, &nbsp;&nbsp;&nbsp;&nbsp;an unordered list is not allowed inside an ordered list</li>
+	     <li>ul second, &nbsp;&nbsp;&nbsp;however browsers do their best to render the flaw anyway.</li>
+	     <li>ul third</li>
+	     <li>ul fourth</li>
+	     <li>ul fifth</li>
+     </ul>
+     <li>first</li>
+     <li>second</li>
+     <li>third</li>
+     <li>fourth</li>
+     <li>fifth</li>
+   </ol>
+
+      <!--This is where the simple error message will be placed-->
+      <p id="validation_log" style="background-color:DarkKhaki "></p>
+
+      <!--Run the html validation test against the markup of current page-->
+      <script src="test_valid_html.js"></script>
+
+	 </body>
+</html>
