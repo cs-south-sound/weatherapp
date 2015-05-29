@@ -30,7 +30,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Scripts for testing this web page -->
+    <!-- Qunit Scripts for testing this web page -->
+      <script src="http://code.jquery.com/qunit/qunit-1.18.0.js"></script>
+      <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.18.0.css">
+
+    
     <!-- A url parser to extract information about this pages address-->
       <script src="test/parseUri1.2.2.js"></script>
 
@@ -179,6 +183,15 @@ $(document).ready(function(){
 <!--output div for troubleshooting validate script $.ajax command result-->
 <div id="log"></div>
 
+
+<!--QQQQQQQQQQQQQ   Qunit test stuff QQQQQQQQQQQQQQQ-->
+<!--This is where the qunit test results are delivered-->
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+<!--This is where the qunit tests are retreived from-->
+<script src="test/test.js"></script>
+<!--QQQQQQQQQQQQQ   End Qunit test stuff QQQQQQQQQQQQQQQ-->
 
 <!--Run the html validation test against the markup of current page-->
 <script src="test/test_valid_html.js"></script>
