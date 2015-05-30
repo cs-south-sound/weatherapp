@@ -2,16 +2,34 @@ var wa = {
     KtoF: function () {
         var name2 = "KtoF";
         console.log(wa.name2);
-    }
+    },
 
     name: "KtoC",
     KtoC: function () {
-         console.log(wa.KtoC);
+        console.log(wa."KtoC");
+    },
+
+    CtoK: function () {
+        var name3 = "CtoK";
+        console.log(wa.name3);
+    },
+
+    FtoK: function () {
+        var name4 = "FtoK";
+        console.log(wa.name4);
+    },
+
+    FtoC: function () {
+        var name5 = "FtoC";
+        console.log(wa.name5);
     }
 };
 
-wa.KtoC();					//outputs "KtoC"
-wa.KtoF();                  // outputs Kelving to Farenheight
+wa.KtoC();					//outputs Kelvin (K) to Fahrenheit (F)
+wa.KtoF();                  //outputs Kelvin (K) to Fahrenheit (F)
+wa.CtoK();                  //outputs Celsius (C) to Kelvin (K)
+wa.FtoK();                  //outputs Fahrenheit (F) to Kelvin (K)
+wa.FtoC();                  //outputs Fahrenheit (F) to Celsius (C)
 
 wa.fuzzyPicnic = function(weatherState){
 
