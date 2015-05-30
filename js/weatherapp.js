@@ -6,16 +6,15 @@ var wa = {
 };
 
 wa.KtoC();					//outputs "KtoC"
-};
 wa.fuzzyPicnic = function(weatherState){
 
     /*  takes input object temperature, wind speed, and inches of precipitation and return a number between 0, and 1 for how good it is for a picnic.
     */
     // envelope to use to convert quantitive values to a 
     // value function for picnics.
-    var tempRange = [90,80,70,55];
-    var windRange = [0,5,15,40];
-    var precipRange = [0,.001,.01,.5];
+    var tempRange = [90, 80, 70, 55];
+    var windRange = [0, 5, 15, 40];
+    var precipRange = [0, 0.001, 0.01, 0.5];
 
     //take range, and value, and return a 'goodness' value.
     var value  = function(range, value){
@@ -33,14 +32,15 @@ wa.fuzzyPicnic = function(weatherState){
         totalValue += value(windRange); 
     }
     if(isset(weatherState.precip)){
-        totalValue += value()
+        totalValue += value();
         valueCount +=1;
     }
 
-    if (valueCount!=0){
+    if (valueCount!==0){
         return totalValue / valueCount;
     }else{
         //we recieved no valid input in the weatherState object.
-        if(isset(console)&&isset(console.log)){ console.log("note:no picnic input")}
+        if(isset(console) && isset(console.log)){ console.log("note:no picnic input"); }
     return 0;}
+
 };
