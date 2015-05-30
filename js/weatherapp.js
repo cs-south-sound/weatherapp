@@ -1,13 +1,9 @@
 var wa = {
-<<<<<<< HEAD
     KtoF: function () {
         var name2 = "KtoF";
         console.log(wa.name2);
     }
-};
 
-wa.KtoF();      // outputs Kelving to Farenheight
-=======
     name: "KtoC",
     KtoC: function () {
          console.log(wa.KtoC);
@@ -15,6 +11,8 @@ wa.KtoF();      // outputs Kelving to Farenheight
 };
 
 wa.KtoC();					//outputs "KtoC"
+wa.KtoF();                  // outputs Kelving to Farenheight
+
 wa.fuzzyPicnic = function(weatherState){
 
     /*  takes input object temperature, wind speed, and inches of precipitation and return a number between 0, and 1 for how good it is for a picnic.
@@ -53,4 +51,4 @@ wa.fuzzyPicnic = function(weatherState){
     return 0;}
 
 };
->>>>>>> df7893adcd3f14ef30ad7c28516de4da9fce9e24
+
