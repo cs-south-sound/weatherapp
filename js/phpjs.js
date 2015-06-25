@@ -6,6 +6,10 @@
    each phpjs function must be manually added to this file as
    deemed necessary.
 
+   HTML usage before the code that needs it!
+    <!-- Some PHP to Javascript converted functions -->
+    <script src="js/phpjs.js"></script>
+
 */
 
 
