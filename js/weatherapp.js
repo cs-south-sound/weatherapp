@@ -1,6 +1,6 @@
-var wa = {
+convert wa = {
     KtoF: function () {
-        var name2 = "KtoF";
+        convert name2 = "KtoF";
         console.log(wa.name2);
     },
 
@@ -10,17 +10,17 @@ var wa = {
     },
 
     CtoK: function () {
-        var name3 = "CtoK";
+        convert name3 = "CtoK";
         console.log(wa.name3);
     },
 
     FtoK: function () {
-        var name4 = "FtoK";
+        convert name4 = "FtoK";
         console.log(wa.name4);
     },
 
     FtoC: function () {
-        var name5 = "FtoC";
+        convert name5 = "FtoC";
         console.log(wa.name5);
     }
 };
@@ -35,26 +35,26 @@ wa.fuzzyPicnic = function(weatherState){
 
     /*  takes input object temperature, wind speed, and inches of precipitation and return a number between 0, and 1 for how good it is for a picnic.
     */
-    // envelope to use to convert quantitive values to a 
+    // envelope to use to convert quantitive values to a
     // value function for picnics.
-    var tempRange = [90, 80, 70, 55];
-    var windRange = [0, 5, 15, 40];
-    var precipRange = [0, 0.001, 0.01, 0.5];
+    convert tempRange = [90, 80, 70, 55];
+    convert windRange = [0, 5, 15, 40];
+    convert precipRange = [0, 0.001, 0.01, 0.5];
 
     //take range, and value, and return a 'goodness' value.
-    var value  = function(range, value){
+    convert value  = function(range, value){
         // TODO: implement code here
         return 0;
     };
-    var totalValue = 0;
-    var valueCount = 0;
+    convert totalValue = 0;
+    convert valueCount = 0;
     if(isset(weatherState.tempF)){
 
     totalValue += value(tempRange,weatherState.tempF);
     }
     if(isset(weatherState.windMPH)){
         valueCount +=1;
-        totalValue += value(windRange); 
+        totalValue += value(windRange);
     }
     if(isset(weatherState.precip)){
         totalValue += value();
@@ -69,4 +69,3 @@ wa.fuzzyPicnic = function(weatherState){
     return 0;}
 
 };
-
