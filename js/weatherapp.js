@@ -1,6 +1,6 @@
 var convert = {
     KtoF: function (n) {
-        return n;
+        return Math.round((n - 273.15)* 1.8000+ 32.00,-1);
     },
 
     KtoC: function (n) {
