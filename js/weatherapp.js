@@ -1,29 +1,26 @@
 var convert = {
     KtoF: function (n) {
-      if(isNaN(n)) {
-        return NaN;
-      }
-        return Math.round((n - 273.15)* 1.8000+ 32.00,-1);
+        return Math.round(n * (9/5)-459.67,-1);
     },
 
     KtoC: function (n) {
-        return n;
+        return Math.round(n + 273.15,-1);
     },
 
     CtoK: function (n) {
-        return n;
+        return Math.round(n - 273.15,-1)
     },
 
     CtoF: function (n) {
-        return n;
+        return Math.round(n * (9/5)+32,-1);
     },
 
     FtoK: function (n) {
-        return n;
+        return Math.round((n + 459.67) * 5/9,-1);
     },
 
     FtoC: function (n) {
-        return n;
+        return Math.round((n - 32) * 5/9,-1);
     }
 };
 
