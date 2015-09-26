@@ -189,9 +189,16 @@ $(document).ready(function(){
       <input type="radio" name="unit" value="Kelvin">Kelvin<br>
       <input type="radio" name="unit" value="Celsius">Celsius<br>
       <input type="radio" name="unit" value="Fahrenheit" checked>Fahrenheit<br>
-      <input class="btn btn-primary btn-lg" role="button" type="submit" value="Convert">
+      <input class="btn btn-primary btn-lg" role="button" type="submit" value="Convert" onclick="conversion">
 
     </div>
+
+    <script>
+      conversion = function() {
+        console.log("in conversion function");
+      }
+
+    </script>
 
 
 
