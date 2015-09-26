@@ -48,7 +48,7 @@
 
      <!-- Sinonjs.org Scripts for testing this web page -->
         <script src="http://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.7.3/sinon-min.js"></script>
-    
+
     <!-- /TestingTestingTestingTestingTestingTestingTestingTestingTestingTesting -->
     <!-- /TestingTestingTestingTestingTestingTestingTestingTestingTestingTesting -->
 
@@ -64,6 +64,13 @@
 <body>
 <script>
 $(document).ready(function(){
+  console.log(convert.KtoF(1));
+  console.log(convert.KtoC(2));
+  console.log(convert.CtoF(3));
+  console.log(convert.CtoK(4));
+  console.log(convert.FtoC(5));
+  console.log(convert.FtoK(6));
+
 
     var ktof = function(tempk){return Math.round((tempk - 273.15)* 1.8000+ 32.00,-1); };
     var wtag = $('.weather');
