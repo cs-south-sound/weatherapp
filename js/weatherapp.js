@@ -1,5 +1,8 @@
 var convert = {
     KtoF: function (n) {
+      if(isNaN(n)) {
+        return NaN;
+      }
         return Math.round((n - 273.15)* 1.8000+ 32.00,-1);
     },
 
