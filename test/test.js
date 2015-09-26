@@ -1,3 +1,6 @@
+test( "Debug level is set to '1'", function( assert ) {
+  assert.ok( debugLevel == 1, "Passed!" );
+});
 test("test converting Kelvin to Fahrenheit", function() {
   equal(wa.convert.KtoF(1),-458);
 });
@@ -15,9 +18,6 @@ test("test converting Fahrenheit to Kelvin", function() {
 });
 test("test converting Fahrenheit to Celsius", function() {
   equal(wa.convert.FtoC(1),-17);
-});
-test( "Debug level is set to '1'", function( assert ) {
-  assert.ok( debugLevel == 1, "Passed!" );
 });
 test("test wa.fuzzyPicnic with null input", function() {
   try {

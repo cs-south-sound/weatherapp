@@ -1,5 +1,6 @@
 var debugLevel = 1; // 0 no Qunit testing
                     // 1 yes Qunit testing
+
 var wa = {};
 
 wa.convert = {
@@ -12,8 +13,9 @@ wa.convert = {
     },
 
     CtoK: function (n) {
-        return Math.round(n - 273.15,-1)
-
+        return Math.round(n - 273.15,-1);
+    },
+  
     CtoF: function (n) {
         return Math.round(n * (9/5)+32,-1);
     },
@@ -26,7 +28,6 @@ wa.convert = {
         return Math.round((n - 32) * 5/9,-1);
     }
 };
-
 
 wa.fuzzyPicnic = function(weatherState) {
     if (!weatherState) throw Error("Must pass weatherstate object");
