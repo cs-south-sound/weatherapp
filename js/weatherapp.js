@@ -1,3 +1,6 @@
+var debugLevel = 1; // 0 no Qunit testing
+                    // 1 yes Qunit testing
+
 var wa = {
     KtoF: function () {
         var name2 = "KtoF";
@@ -6,7 +9,7 @@ var wa = {
 
     name: "KtoC",
     KtoC: function () {
-        console.log(wa."KtoC");
+        console.log(wa.KtoC);
     },
 
     CtoK: function () {
@@ -42,22 +45,22 @@ wa.fuzzyPicnic = function(weatherState){
     var precipRange = [0, 0.001, 0.01, 0.5];
 
     //take range, and value, and return a 'goodness' value.
-    var value  = function(range, value){
+    function goodness(range, value){
         // TODO: implement code here
         return 0;
-    };
+    }
     var totalValue = 0;
     var valueCount = 0;
     if(isset(weatherState.tempF)){
 
-    totalValue += value(tempRange,weatherState.tempF);
+    totalValue += goodness(tempRange, weatherState.tempF);
     }
     if(isset(weatherState.windMPH)){
         valueCount +=1;
-        totalValue += value(windRange); 
+        totalValue += goodness(windRange, weatherState.windMPH); 
     }
     if(isset(weatherState.precip)){
-        totalValue += value();
+        totalValue += goodness(precipRange, weatherState.precip);
         valueCount +=1;
     }
 

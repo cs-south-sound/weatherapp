@@ -31,3 +31,15 @@ test("test temperature converts to with bad to", function() {
     equal(e.message, "unknown to value");
   }
 });
+QUnit.test( "Debug level is set to '1'", function( assert ) {
+  assert.ok( debugLevel == 1, "Passed!" );
+});
+test("test wa.fuzzyPicnic with null input", function() {
+  try {
+    equal(wa.fuzzyPicnic(null), 0);
+    throw Error('expected exception not thrown');
+  } catch(e) {
+    ok(e);
+    equal(e.message, "Must pass weatherstate object");
+  }
+});
