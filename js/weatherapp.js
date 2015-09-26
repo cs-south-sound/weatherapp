@@ -1,31 +1,30 @@
 var convert = {
-    KtoF: function () {
-        var name2 = "KtoF";
-        console.log(convert.name2);
+    KtoF: function (n) {
+        return n;
     },
 
-    name: "KtoC",
-    KtoC: function () {
-        console.log(convert."KtoC");
+    KtoC: function (n) {
+        return n;
     },
 
-    CtoK: function () {
-        var name3 = "CtoK";
-        console.log(convert.name3);
+    CtoK: function (n) {
+        return n;
     },
 
-    FtoK: function () {
-        var name4 = "FtoK";
-        console.log(convert.name4);
+    CtoF: function (n) {
+        return n;
     },
 
-    FtoC: function () {
-        var name5 = "FtoC";
-        console.log(convert.name5);
+    FtoK: function (n) {
+        return n;
+    },
+
+    FtoC: function (n) {
+        return n;
     }
 };
 
-convert.KtoC();					//outputs Kelvin (K) to Fahrenheit (F)
+convert.KtoC();					         //outputs Kelvin (K) to Fahrenheit (F)
 convert.KtoF();                  //outputs Kelvin (K) to Fahrenheit (F)
 convert.CtoK();                  //outputs Celsius (C) to Kelvin (K)
 convert.FtoK();                  //outputs Fahrenheit (F) to Kelvin (K)
