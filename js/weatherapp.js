@@ -24,12 +24,6 @@ var convert = {
     }
 };
 
-convert.KtoC();					         //outputs Kelvin (K) to Fahrenheit (F)
-convert.KtoF();                  //outputs Kelvin (K) to Fahrenheit (F)
-convert.CtoK();                  //outputs Celsius (C) to Kelvin (K)
-convert.FtoK();                  //outputs Fahrenheit (F) to Kelvin (K)
-convert.FtoC();                  //outputs Fahrenheit (F) to Celsius (C)
-
 convert.fuzzyPicnic = function(weatherState){
 
     /*  takes input object temperature, wind speed, and inches of precipitation and return a number between 0, and 1 for how good it is for a picnic.
