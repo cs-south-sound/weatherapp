@@ -34,7 +34,8 @@ wa.CtoK();                  //outputs Celsius (C) to Kelvin (K)
 wa.FtoK();                  //outputs Fahrenheit (F) to Kelvin (K)
 wa.FtoC();                  //outputs Fahrenheit (F) to Celsius (C)
 
-wa.fuzzyPicnic = function(weatherState){
+wa.fuzzyPicnic = function(weatherState) {
+    if (!weatherState) throw Error("Must pass weatherstate object");
 
     /*  takes input object temperature, wind speed, and inches of precipitation and return a number between 0, and 1 for how good it is for a picnic.
     */
