@@ -1,33 +1,36 @@
+test("test converting Kelvin to Fahrenheit", function() {
+  equal(convert.KtoF(1),-458);
+});
+test("test converting Kelvin to Celsius", function() {
+  equal(convert.KtoF(1),-458);
+});
+test("test converting Celsius to Fahrenheit", function() {
+  equal(convert.KtoF(1),-458);
+});
+test("test converting Celsius to Kelvin", function() {
+  equal(convert.KtoF(1),-458);
+});
 test("test converting Kelving to Fahrenheit", function() {
-  equal(ktof(1),-458);
+  equal(convert.KtoF(1),-458);
 });
-test("test temperature converts Fahrenheit to Celsius with button click", function() {
-  equal(handleConversion('Farhenheit', 'Celsius', 32), 0);
-});
-test("test temperature converts Celsius to Celsius with button click", function() {
-  equal(handleConversion('Celsius', 'Celsius', 0), 0);
-});
-test("test temperature converts Celsius to Fahrenheit with button click", function() {
-  equal(handleConversion('Celsius', 'Farhenheit', 0), 32);
-});
-test("test temperature converts Farenheit to Fahrenheit with button click", function() {
-  equal(handleConversion('Farhenheit', 'Farhenheit', 0), 0);
+test("test converting Kelving to Celsius", function() {
+  equal(convert.KtoF(1),-458);
 });
 test("test temperature converts with bad from", function() {
-  try {
-    equal(handleConversion('Badfrom', 'Celsius', 32), 0);
-    throw Error('expected exception not thrown');
-  } catch(e) {
-    ok(e);
-    equal(e.message, "unknown from value");
-  }
+  equal(convert.CtoF(NaN), NaN);
 });
-test("test temperature converts to with bad to", function() {
-  try {
-    equal(handleConversion('Celsius', 'Badto', 32), 0);
-    throw Error('expected exception not thrown');
-  } catch(e) {
-    ok(e);
-    equal(e.message, "unknown to value");
-  }
+test("test temperature converts with bad from", function() {
+  equal(convert.CtoK(NaN), NaN);
+});
+test("test temperature converts with bad from", function() {
+  equal(convert.FtoC(NaN), NaN);
+});
+test("test temperature converts with bad from", function() {
+  equal(convert.FtoK(NaN), NaN);
+});
+test("test temperature converts with bad from", function() {
+  equal(convert.KtoC(NaN), NaN);
+});
+test("test temperature converts with bad from", function() {
+  equal(convert.KtoF(NaN), NaN);
 });
