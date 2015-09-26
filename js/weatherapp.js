@@ -1,4 +1,6 @@
-var convert = {
+var wa = {};
+
+wa.convert = {
     KtoF: function (n) {
         return Math.round(n * (9/5)-459.67,-1);
     },
@@ -24,7 +26,7 @@ var convert = {
     }
 };
 
-convert.fuzzyPicnic = function(weatherState){
+wa.fuzzyPicnic = function(weatherState){
 
     /*  takes input object temperature, wind speed, and inches of precipitation and return a number between 0, and 1 for how good it is for a picnic.
     */
