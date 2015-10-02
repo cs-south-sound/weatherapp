@@ -5,7 +5,7 @@ test("test converting Kelvin to Fahrenheit", function() {
   equal(wa.convert.KtoF(1),-458);
 });
 test("test converting Kelvin to Celsius", function() {
-  equal(wa.convert.KtoC(1),274);
+  equal(wa.convert.KtoC(1),-272.15);
 });
 test("test converting Celsius to Fahrenheit", function() {
   equal(wa.convert.CtoF(1),34);
