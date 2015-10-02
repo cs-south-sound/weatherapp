@@ -11,7 +11,7 @@ test("test converting Celsius to Fahrenheit", function() {
   equal(wa.convert.CtoF(1),34);
 });
 test("test converting Celsius to Kelvin", function() {
-  equal(wa.convert.CtoK(1),-272);
+  equal(wa.convert.CtoK(1),274.15);
 });
 test("test converting Fahrenheit to Kelvin", function() {
   equal(wa.convert.FtoK(1),256);
