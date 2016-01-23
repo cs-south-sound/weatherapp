@@ -5,27 +5,27 @@ var wa = {};
 
 wa.convert = {
     KtoF: function (n) {
-        return Math.round(n * (9/5)-459.67,-1);
+        return Math.round10((n-273.15)*1.8+32,-2);
     },
 
     KtoC: function (n) {
-        return Math.round(n + 273.15,-1);
+        return Math.round10(n - 273.15,-2);
     },
 
     CtoK: function (n) {
-        return Math.round(n - 273.15,-1);
+        return Math.round10(n + 273.15,-2);
     },
-  
+
     CtoF: function (n) {
-        return Math.round(n * (9/5)+32,-1);
+        return Math.round10(n * (9/5)+32,-2);
     },
 
     FtoK: function (n) {
-        return Math.round((n + 459.67) * 5/9,-1);
+        return Math.round10((n + 459.67) * 5/9,-2);
     },
 
     FtoC: function (n) {
-        return Math.round((n - 32) * 5/9,-1);
+        return Math.round10((n - 32) * 5/9,-2);
     }
 };
 
@@ -53,7 +53,7 @@ wa.fuzzyPicnic = function(weatherState) {
     if(isset(weatherState.windMPH)){
         valueCount +=1;
         totalValue += value(windRange);
-        totalValue += goodness(windRange, weatherState.windMPH); 
+        totalValue += goodness(windRange, weatherState.windMPH);
     }
     if(isset(weatherState.precip)){
         totalValue += goodness(precipRange, weatherState.precip);

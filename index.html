@@ -31,6 +31,10 @@
     <![endif]-->
 
 
+    <!-- Round10 this must be loaded before weatherapp-->
+    <script src="js/round_ten.js"></script>
+
+
     <!-- Some PHP to Javascript converted functions -->
     <script src="js/phpjs.js"></script>
 
@@ -52,20 +56,12 @@
     <!-- /TestingTestingTestingTestingTestingTestingTestingTestingTestingTesting -->
     <!-- /TestingTestingTestingTestingTestingTestingTestingTestingTestingTesting -->
 
-
-    <script>
-    console.log(""+isset(w)+"/n" )
-    var w;
-    console.log(""+isset(w)+"/n" )
-    </script>
-
-
 </head>
 <body>
 <script>
 $(document).ready(function(){
 
-    var ktof = function(tempk){return Math.round((tempk - 273.15)* 1.8000+ 32.00,-1); };
+    var ktof = function(tempk){return Math.round10((tempk - 273.15)* 1.8000+ 32.00,-1); };
     var wtag = $('.weather');
     var debug = $('.debug');
 /* be nice during debugging other scripts, do not access open weathermap.org too often*/
