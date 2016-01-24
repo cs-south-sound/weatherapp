@@ -12,30 +12,24 @@ test( "module ISSET installed", function( assert ) {
     var result = (!result1 && result2);
   assert.ok( result, "Passed!" );
 });
-test("test converting Kelvin to Fahrenheit", function() {
+test("convert Kelvin to Fahrenheit", function() {
   equal(wa.convert.KtoF(1),-457.87);
 });
-test("test converting Kelvin to Celsius", function() {
+test("convert Kelvin to Celsius", function() {
   equal(wa.convert.KtoC(1),-272.15);
 });
-test("test converting Celsius to Fahrenheit", function() {
+test("convert Celsius to Fahrenheit", function() {
   equal(wa.convert.CtoF(1),33.8);
 });
-test("test converting Celsius to Kelvin", function() {
+test("convert Celsius to Kelvin", function() {
   equal(wa.convert.CtoK(1),274.15);
 });
-test("test converting Fahrenheit to Kelvin", function() {
+test("convert Fahrenheit to Kelvin", function() {
   equal(wa.convert.FtoK(1),255.93);
 });
-test("test converting Fahrenheit to Celsius", function() {
+test("convert Fahrenheit to Celsius", function() {
   equal(wa.convert.FtoC(1),-17.22);
 });
-test("test wa.fuzzyPicnic with null input", function() {
-  try {
-    equal(wa.fuzzyPicnic(null), 0);
-    throw Error('expected exception not thrown');
-  } catch(e) {
-    ok(e);
-    equal(e.message, "Must pass weatherstate object");
-  }
+test("wa.fuzzyPicnic with null input", function() {
+    equal(1===0,true);
 });
