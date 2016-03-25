@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script
+		src="http://maps.googleapis.com/maps/api/js">
+	</script>
+</head>
+
+<body>
+<div id="googleMap" style="width:500px;height:380px;"></div>
+<script type="text/javascript">
+	
+	var contentArea = document.getElementById("googleMap");
+
+	function initialize() {
+	  	if (navigator.geolocation) { // Check if GEO Location is avail.
+	        navigator.geolocation.getCurrentPosition(mapCurrentPosition);
+	    } else {
+	        contentArea.innerHTML = "Geolocation is not supported by this browser.";
+	    }		
+	}
+
+	function mapCurrentPosition(currentPosition) {
+		var myCenter=new google.maps.LatLng(currentPosition.coords.latitude, currentPosition.coords.longitude);
+
+		var mapProp = {
+		    center:myCenter,
+		    zoom:17,
+		    mapTypeId:google.maps.MapTypeId.ROADMAP
+		};
+		
+		var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+		var marker=new google.maps.Marker({
+			position:myCenter,
+		});
+
+		marker.setMap(map);
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</body>
+
+</html>
