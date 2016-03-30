@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/slate/bootstrap.min.css">
 
     <!-- Custom styles for Navbar template -->
     <!-- <link href="nvabar/navbar.css" rel="stylesheet">
@@ -36,12 +36,12 @@
     <script src="js/phpjs.js"></script>
 
     <!-- main code related to the Tacoma-JS weatherapp -->
-    <script src="js/weatherapp.js"></script>
+    <script src="js/weatherapp.js" data-cover></script>
 
 
 
-    <!-- TestingTestingTestingTestingTestingTestingTestingTestingTestingTesting -->
-    <!-- TestingTestingTestingTestingTestingTestingTestingTestingTestingTesting -->
+    <!-- TestingTestingTestingTestingTestingTestingTesting -->
+    <!-- TestingTestingTestingTestingTestingTestingTesting -->
     <!-- Qunit Scripts for testing this web page -->
     <script src="http://code.jquery.com/qunit/qunit-1.18.0.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.18.0.css">
@@ -49,8 +49,8 @@
     <!-- Sinonjs.org Scripts for testing this web page -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.7.3/sinon-min.js"></script>
 
-    <!-- /TestingTestingTestingTestingTestingTestingTestingTestingTestingTesting -->
-    <!-- /TestingTestingTestingTestingTestingTestingTestingTestingTestingTesting -->
+    <!-- TestingTestingTestingTestingTestingTestingTesting -->
+    <!-- TestingTestingTestingTestingTestingTestingTesting -->
 
 </head>
 <body>
@@ -60,13 +60,20 @@
 
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
+
+                    <a class="nav navbar-nav" href="#" title="Tacoma-JS Weather App">
+                        <!-- This icon will be updated/changed depending upon the current
+                             weather conditions
+                        -->
+                        <img id="current-weather-icon" src="icons/weather_symbols/nicubunu/nicubunu-Weather-Symbols-Sun.png" alt="current weather icon" style="height:40px; border-style: dotted; border-width:1px">
+                    </a>
+
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Brand</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,15 +82,17 @@
                         <li class="active"><a href="index.html#current_weather">Current <span class="sr-only">(current)</span></a></li>
                         <li><a href="index.html#temperature_conversions">Conversions</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Services<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="#">Accuweather</a></li>
+                                <li><a href="#">Openweathermap</a></li>
+                                <li><a href="#">Glossary</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">3-Day Forecast</a></li>
+                                <li><a href="#">5-Day Forecast</a></li>
+                                <li><a href="#">Forecast Accuracy</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#">Fork Me!</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -93,37 +102,19 @@
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Conversions</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </li>
-                    </ul>
                 </div><!-- /.navbar-collapse -->
 
         </nav>
         <header>
-            head
+            <div class="weather"></div><!--document ready script places current weather here -->
         </header>
-        <article>
-            <h2>content</h2>
-        </article>
         <div class="bs-docs-section">
 
-            <h1 id="current_weather" class="page-header">Current weather</h1>
+            <h3 id="current_weather" class="page-header">Accuweather</h3>
             <!--Implementing the jumbotron class from Bootstrap-->
             <!--##############################################################################-->
             <div class="bs-example" data-example-id="simple-jumbotron">
                 <div class="jumbotron">
-                    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-
                     <a href="http://www.accuweather.com/en/us/lakewood-wa/98499/weather-forecast/41598_pc" class="aw-widget-legal">
                         <!--
                         By accessing and/or using this code snippet, you agree to AccuWeather\u2019s terms and conditions (in English) which can be found at http://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather\u2019s Privacy Statement (in English) which can be found at http://www.accuweather.com/en/privacy.
@@ -179,12 +170,17 @@
 
 
         <!--QQQQQQQQQQQQQ   Qunit test stuff QQQQQQQQQQQQQQQ-->
-        <!--This is where the qunit test results are delivered-->
-        <div id="qunit"></div>
-        <div id="qunit-fixture"></div>
+          <!--This is where the qunit test results are delivered-->
+          <div id="qunit"></div>
+          <div id="qunit-fixture"></div>
 
-        <!--This is where the qunit tests are retreived from-->
-        <script src="test/test.js"></script>
+          <!-- Javascript code coverage with http://blanketjs.org/ -->
+          <!-- Add a 'data-cover' attribute to any source script tags you want covered. -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/blanket.js/1.1.4/blanket.min.js"></script>
+
+          <!--This is where the qunit tests are retreived from-->
+          <script src="test/test.js"></script>
+
         <!--QQQQQQQQQQQQQ   End Qunit test stuff QQQQQQQQQQQQQQQ-->
 
         <!--Run the html validation test against the markup of current page-->
