@@ -30,4 +30,21 @@ A collection of links to help team members learn more about weather as needed to
   * nws view national [->](http://www.nws.noaa.gov/view/national.php)
 
 ### Example weather services others have created
-  Gorge Kite Board School [->](http://gorgekiteboardschool.com/cgi-shl/09-wind-speed-forecast.pl)
+  Gorge Kite Board School [->](http://www.gorgekiteboardschool.com/cgi-shl/15-wind-speed-forecast.pl)
+
+### Maps rendered dynamically
+  * Wind
+    * by hint.fm [->](http://hint.fm/wind/)
+    * and air quality in Tokyo [->](http://air.nullschool.net/)
+    * global model [->](http://earth.nullschool.net/)
+      * on github [->](https://github.com/cambecc/earth)
+
+### Vectors on maps
+  * ArcGIS for developers by ESRI [->](https://developers.arcgis.com/javascript/3/jssamples/layers_imageservicevector.html)
+
+### D3.js[->](https://d3js.org/) Data Driven Documents
+  * Various examples [->](http://christopheviau.com/d3list/)
+  * Rotating globe to flat [->](http://bl.ocks.org/KoGor/7023703)
+  * Map tutorial by Mike Bostock [->](https://bost.ocks.org/mike/map/)
+    * topojson [->](https://github.com/mbostock/topojson) An extension to [GeoJSON](http://geojson.org/) that encodes topology.
+  * Tutorial by [Scott Murray](http://alignedleft.com)[->](http://alignedleft.com/tutorials/d3/)
