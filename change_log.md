@@ -1,5 +1,7 @@
 # change_log.md
 
+Thur 16-Jun 2016 21:52 merged branches #20_mapping and develop
+
 Thur 24-Mar 2016 12:42pm Pre-alpha release to master
 * Create a clean starting point for next revision
 
