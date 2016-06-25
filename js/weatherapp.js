@@ -28,29 +28,49 @@ wa = (function ($) {
 
         convert = {
             KtoF: function (n) {
-                return Math.round10((n - 273.15) * 1.8 + 32, -2);
+                var dp = decimalPlaces(n);
+                return Math.round10((n - 273.15) * 1.8 + 32, -dp);
             },
 
             KtoC: function (n) {
-                return Math.round10(n - 273.15, -2);
+                var dp = decimalPlaces(n);
+                return Math.round10(n - 273.15, -dp);
             },
 
             CtoK: function (n) {
-                return Math.round10(n + 273.15, -2);
+                var dp = decimalPlaces(n);
+                n = Number(n);
+                return Math.round10(n + 273.15, -dp);
             },
 
             CtoF: function (n) {
-                return Math.round10(n * 1.8 + 32, -2);
+                var dp = decimalPlaces(n);
+                return Math.round10(n * 1.8 + 32, -dp);
             },
 
             FtoK: function (n) {
-                return Math.round10((n + 459.67) * 5 / 9, -2);
+                var dp = decimalPlaces(n);
+                n = Number(n);
+                return Math.round10((n + 459.67) * 5 / 9, -dp);
             },
 
             FtoC: function (n) {
-                return Math.round10((n - 32) * 5 / 9, -2);
+                var dp = decimalPlaces(n);
+                return Math.round10((n - 32) * 5 / 9, -dp);
             }
         },
+        
+        decimalPlaces = function (num) {
+              //http://stackoverflow.com/questions/10454518/javascript-how-to-retrieve-the-number-of-decimals-of-a-string-number
+              var match = (''+num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+              if (!match) { return 0; }
+              return Math.max(
+                   0,
+                   // Number of digits right of decimal point.
+                   (match[1] ? match[1].length : 0)
+                   // Adjust for scientific notation.
+                   - (match[2] ? +match[2] : 0));
+            },
 
         fuzzyPicnic = function (weatherState) {
             if (!weatherState) {

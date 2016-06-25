@@ -13,23 +13,29 @@ test( "module ISSET installed", function( assert ) {
   assert.ok( result, "Passed!" );
 });
 test("convert Kelvin to Fahrenheit", function() {
-  equal(wa.convert.KtoF(1),-457.87);
+  equal(wa.convert.KtoF('1.00'),-457.87);
 });
 test("convert Kelvin to Celsius", function() {
-  equal(wa.convert.KtoC(1),-272.15);
+  equal(wa.convert.KtoC('1.00'),-272.15);
 });
 test("convert Celsius to Fahrenheit", function() {
-  equal(wa.convert.CtoF(1),33.8);
+  equal(wa.convert.CtoF('1.00'),33.8);
 });
 test("convert Celsius to Kelvin", function() {
-  equal(wa.convert.CtoK(1),274.15);
+  equal(wa.convert.CtoK('1.00'),274.15);
 });
 test("convert Fahrenheit to Kelvin", function() {
-  equal(wa.convert.FtoK(1),255.93);
+  equal(wa.convert.FtoK('1.00'),255.93);
 });
 test("convert Fahrenheit to Celsius", function() {
-  equal(wa.convert.FtoC(1),-17.22);
+  equal(wa.convert.FtoC('1.00'),-17.22);
 });
+
+test("convert Fahrenheit to Celsius with decimal number", function() {
+  equal(wa.convert.FtoC(1.1),-17.2);
+});
+
+
 test("wa.fuzzyPicnic with null input", function() {
     equal(1===0,true);
 });
