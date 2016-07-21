@@ -32,6 +32,8 @@ A collection of links to help team members learn more about weather as needed to
 ### Example weather services others have created
   Gorge Kite Board School [:link:](http://www.gorgekiteboardschool.com/cgi-shl/15-wind-speed-forecast.pl)
 
+## Maps
+
 ### Maps rendered dynamically
   * Wind
     * by hint.fm [:link:](http://hint.fm/wind/)
@@ -41,11 +43,18 @@ A collection of links to help team members learn more about weather as needed to
 
 ### Vectors on maps
   * ArcGIS for developers by ESRI [:link:](https://developers.arcgis.com/javascript/3/jssamples/layers_imageservicevector.html)
+  * Leaflet.js [:link:](http://leafletjs.com/)
 
 ### D3.js [:link:](https://d3js.org/) Data Driven Documents
+  * Maps
+    * Rotating globe to flat [:link:](http://bl.ocks.org/KoGor/7023703)
+    * Map tutorial by Mike Bostock [:link:](https://bost.ocks.org/mike/map/)
+      * topojson [:link:](https://github.com/mbostock/topojson) An extension to [GeoJSON](http://geojson.org/) that encodes topology.
+    * react-d3 [:link:](http://map.reactd3.org/)   
   * Various examples [:link:](http://christopheviau.com/d3list/)
-  * Rotating globe to flat [:link:](http://bl.ocks.org/KoGor/7023703)
-  * Map tutorial by Mike Bostock [:link:](https://bost.ocks.org/mike/map/)
-    * topojson [:link:](https://github.com/mbostock/topojson) An extension to [GeoJSON](http://geojson.org/) that encodes topology.
   * Tutorial by [Scott Murray](http://alignedleft.com) [:link:](http://alignedleft.com/tutorials/d3/)
     * List on D3 github [:link:](https://github.com/d3/d3/wiki/Tutorials)
+  * Books
+    * Interactive Data Visualization for the Web by[Scott Murray](http://alignedleft.com) [:link:](http://chimera.labs.oreilly.com/books/1230000000345/index.html)
+    * D3 Tips and Tricks by Malcom Maclean [:link:](https://leanpub.com/D3-Tips-and-Tricks/read)
+  * Library comparison on Wikipedia [:link:](https://en.wikipedia.org/wiki/Comparison_of_JavaScript_charting_frameworks) (not all d3?)
