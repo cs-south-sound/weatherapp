@@ -1,0 +1,1 @@
+Mapping for the WeatherApp
