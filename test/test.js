@@ -1,5 +1,5 @@
-test("wa.version returns alpha-0.0.1", function() {
-  equal(wa.version(),'alpha-0.0.1');
+test("wa.version returns alpha-0.0.2", function() {
+  equal(wa.version(),'alpha-0.0.2');
 });
 test( "Debug level is set to '1'", function( assert ) {
   assert.ok( debugLevel == 1, "Passed!" );

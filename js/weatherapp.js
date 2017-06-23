@@ -8,7 +8,7 @@ wa = (function ($) {
     "use strict";
     
     var version = function Version() {
-        return "alpha-0.0.1";        
+        return "alpha-0.0.2";        
     };
 
     var _apiKey = null,
