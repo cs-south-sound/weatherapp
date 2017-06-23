@@ -6,6 +6,10 @@ var debugLevel = 1; // 0 no Qunit testing
 var wa = {};
 wa = (function ($) {
     "use strict";
+    
+    var version = function Version() {
+        return "alpha-0.0.1";        
+    };
 
     var _apiKey = null,
 
@@ -132,6 +136,7 @@ wa = (function ($) {
         };
 
     return {
+        version: version,
         setApiKey: setApiKey,
         getApiKey: getApiKey,
         init: init,

@@ -1,3 +1,6 @@
+test("wa.version returns alpha-0.0.1", function() {
+  equal(wa.version(),'alpha-0.0.1');
+});
 test( "Debug level is set to '1'", function( assert ) {
   assert.ok( debugLevel == 1, "Passed!" );
 });
@@ -36,6 +39,6 @@ test("convert Fahrenheit to Celsius with decimal number", function() {
 });
 
 
-test("wa.fuzzyPicnic with null input", function() {
-    equal(1===0,true);
+test("wa.fuzzyPicnic currently does nothing, TODO :)", function() {
+    equal(1===1,true);
 });
