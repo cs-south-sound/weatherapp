@@ -1,5 +1,7 @@
 # change_log.md
 
+Wed 18-Oct 2017 Prepare to merge with branch from meetup 062417
+
 Fri  23-Jun 2017 13:56 Prepare to push merged develop branch
 * merge branch "#21_sigfigs_rounding"
 
