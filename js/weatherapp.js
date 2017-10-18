@@ -30,6 +30,31 @@ wa = (function ($) {
             return _apiKey;
         },
 
+        _userLocation,
+
+        getUsersPosition = function GetUsersPosition() {
+            if (navigator.geolocation) { // Check if GEO Location is avail.
+                console.log("In function getUsersPosition");
+                navigator.geolocation.getCurrentPosition( _setUserLocation );
+            } else {
+                //"Geolocation is not supported by this browser.";
+            }
+         },
+
+         _setUserLocation = function SetUsersLocation(cp) {
+             //expecting current position from navigotor.geolocation
+              console.log("in function _setUsersLocation");
+             if(cp !== undefined){
+                 _userLocation = Object.create(cp.coords);// create a copy
+                 console.dir( _userLocation.__proto__);
+                 //console.log(_userLocation.__proto__.latitude);
+                 //console.log(_userLocation.__proto__.longitude);
+             }else{
+                 console.log("currentPosition is undefined");
+             }
+         },
+
+
         convert = {
             KtoF: function (n) {
                 var dp = decimalPlaces(n);
@@ -122,11 +147,25 @@ wa = (function ($) {
         init = function () {
             var wtag = $('.weather');
             var debug = $('.debug');
-            var uri = "http://api.openweathermap.org/data/2.5/weather?q=tacoma,US&APPID=" + wa.getApiKey();
+            var uri;
+            var latlon;// latitude+longitude for the url
+            getUsersPosition();
+
+            if(_userLocation !== undefined ){//location is available
+                 console.log(_userLocation.__proto__.latitude);
+                 console.log(_userLocation.__proto__.longitude);
+                 latlon = "lat="+_userLocation.__proto__.latitude+"&lon="+_userLocation.__proto__.longitude;
+                 console.log("latlon: "+ latlon);
+                 uri = "//api.openweathermap.org/data/2.5/weather?" + latlon + "&APPID=" + wa.getApiKey();
+            }else{
+                 console.log("Location is not available")
+                 uri = "https://api.openweathermap.org/data/2.5/weather?q=tacoma,US&APPID=" + wa.getApiKey();
+            }
+
             /* be nice during debugging other scripts, do not access open weathermap.org too often*/
             $.getJSON(uri, function (wdata) {
-                //console.log("returned data: ");//debug only
-                //console.log(JSON.stringify(wdata));//debug only
+                console.log("$.getJSON returned data: ");//debug only
+                console.log(JSON.stringify(wdata));//debug only
                 //debug.text(JSON.stringify(wdata));//debug only response into web page
                 var description = wdata.weather[0].description;
                 var temp = wdata.main.temp;
@@ -139,6 +178,7 @@ wa = (function ($) {
         version: version,
         setApiKey: setApiKey,
         getApiKey: getApiKey,
+        getUsersPosition: getUsersPosition,
         init: init,
         convert: convert,
         fuzzyPicnic: fuzzyPicnic

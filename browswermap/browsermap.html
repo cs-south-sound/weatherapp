@@ -2,7 +2,7 @@
 <html>
 <head>
 	<script
-		src="http://maps.googleapis.com/maps/api/js">
+		src="https://maps.googleapis.com/maps/api/js">
 	</script>
 </head>
 
@@ -21,6 +21,7 @@
 	}
 
 	function mapCurrentPosition(currentPosition) {
+		console.dir(currentPosition);
 		var myCenter=new google.maps.LatLng(currentPosition.coords.latitude, currentPosition.coords.longitude);
 
 		var mapProp = {
