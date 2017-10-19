@@ -1,0 +1,29 @@
+{
+  "name": "tacoma-js-weatherapp",
+  "version": "alpha-0.0.3",
+  "description": "A sandbox promoting group member particiation in best practices in state-of-the-art project design, coding and code project management",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jasmine-node spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tacoma-JS/weatherapp.git"
+  },
+  "keywords": [
+    "weather",
+    "TDD",
+    "BDD",
+    "javascript"
+  ],
+  "author": "Tacoma-JS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tacoma-JS/weatherapp/issues"
+  },
+  "homepage": "https://github.com/Tacoma-JS/weatherapp#readme"
+}
