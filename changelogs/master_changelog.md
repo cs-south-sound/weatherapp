@@ -10,7 +10,10 @@ my first thought was "how can we do without any services that cost money"?
 While doing something in [codepen.io](https://codepen.io/#) seemed like it might
 be highly shareable, the CORS limitation of accessing outside API data caused
 disfunction. Then I found out about [rawgit](http://rawgit.com/) and thought I
-saw an opportunity to have hosting with all the benefits of a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network).
+saw an opportunity to have hosting with all the benefits of a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network)
+by using a link like
+https://rawgit.com/Tacoma-JS/weatherapp/develop/index.html
+
 
 While most Javascript examples go something like:
 ```
