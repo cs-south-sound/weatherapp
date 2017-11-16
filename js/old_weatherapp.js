@@ -1,18 +1,3 @@
-/**
- * Usage:
- *      wa.version(); //returns version of this app
- *      wa.init();
- */
- 
-/** Dependencies to import at top level */ 
-//import $       from "jQuery";    //add allowed by stealjs?
-//import round10 from "round_ten"; //add allowed by stealjs?
-//import isset   from "phpjs";     //add allowed by stealjs?
-
-console.log("In module weatherapp.js");
-//alert("In module weatherapp.js");
-
-
 var debugLevel = 1; // 0 no Qunit testing
                     // 1 yes Qunit testing
 
@@ -199,15 +184,10 @@ wa = (function ($) {
         fuzzyPicnic: fuzzyPicnic
     };
 
-}());
-
+}(jQuery));
 
 
 document.addEventListener('DOMContentLoaded', function () {
     "use strict";
-    console.log("DOMContentLoaded detected in weatherapp.js")
     wa.init();
 }, false);
-
-
-export default wa;
