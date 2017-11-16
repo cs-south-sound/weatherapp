@@ -1,13 +1,13 @@
+/* global window jasmineRequire jasmine*/
 /**
     JD copied file from:
     https://raw.githubusercontent.com/jasmine/jasmine/master/lib/jasmine-core/boot/boot.js
-    
+
     The intent of this customization is to control when the boot process occurs
     in conjunction with loading `software under test` with stealjs.com
     module loader.
-    
-    This file will be [has been] converted to ES6 module format for loading by
-    stealjs
+
+    JD converted this file to ES6 module format for loading by stealjs.
 */
 
 /**
@@ -20,7 +20,8 @@
  [jasmine-gem]: http://github.com/pivotal/jasmine-gem
  */
 
-(function() {
+var requireAndAttachAllOfJasmineToWindow =
+    function RequireAndAttachAllOfJasmineToWindow() {
 
   /**
    * ## Require &amp; Instantiate
@@ -127,6 +128,7 @@
   var currentWindowOnload = window.onload;
 
   window.onload = function() {
+    console.log("  Running overloaded function window.onload");
     if (currentWindowOnload) {
       currentWindowOnload();
     }
@@ -141,5 +143,6 @@
     for (var property in source) destination[property] = source[property];
     return destination;
   }
+}; // end function requireAndAttachAllOfJasmineToWindow()
 
-}());
+export default requireAndAttachAllOfJasmineToWindow;

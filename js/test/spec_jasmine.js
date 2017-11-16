@@ -16,10 +16,11 @@ import wa from "wa"; // weatherapp SUT
 
 console.log("  wa:");
 console.dir(wa);
-
+/*
 console.log("  jasmine.version: " + jasmine.version);
 console.log("  jasmine:");
 console.dir(jasmine);
+*/
 console.log("  window:");
 console.dir(window);
 

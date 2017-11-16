@@ -10,10 +10,10 @@ steal.config( {
      "sig-figs": "https://rawgit.com/Tacoma-JS/significant-figures/develop/sig-figs.js",
      "jasmine": "https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.8.0/jasmine.min.js",
      "jasmineHtml": "https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.8.0/jasmine-html.min.js",
-     "jasmineBoot": "https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.8.0/boot.min.js",
-     "specs":"./test/spec_jasmine.js"
-  }
-  
+     "jasmineBoot": "./test/custom_boot_jasmine.js",
+     "specs": "./test/spec_jasmine.js"
+   }
+
 } );
 
 
