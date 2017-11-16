@@ -21,7 +21,7 @@
  */
 
 var requireAndAttachAllOfJasmineToWindow =
-    function RequireAndAttachAllOfJasmineToWindow() {
+    function RequireAndAttachAllOfJasmineToWindow() {//removed IIFE, added func
 
   /**
    * ## Require &amp; Instantiate
@@ -128,7 +128,7 @@ var requireAndAttachAllOfJasmineToWindow =
   var currentWindowOnload = window.onload;
 
   window.onload = function() {
-    console.log("  Running overloaded function window.onload");
+    console.log("  In file custom_boot_jasmine.js, running overloaded function window.onload");
     if (currentWindowOnload) {
       currentWindowOnload();
     }
@@ -145,4 +145,4 @@ var requireAndAttachAllOfJasmineToWindow =
   }
 }; // end function requireAndAttachAllOfJasmineToWindow()
 
-export default requireAndAttachAllOfJasmineToWindow;
+export default requireAndAttachAllOfJasmineToWindow;// ES6 module format :)

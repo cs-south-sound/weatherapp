@@ -11,7 +11,8 @@ steal.config( {
      "jasmine": "https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.8.0/jasmine.min.js",
      "jasmineHtml": "https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.8.0/jasmine-html.min.js",
      "jasmineBoot": "./test/custom_boot_jasmine.js",
-     "specs": "./test/spec_jasmine.js"
+     "specs": "./test/spec_jasmine.js",
+     "vvD": "https://rawgit.com/NorthDecoder/jsDebugUtility/master/vvD/js/vvD_module.js"
    }
 
 } );
