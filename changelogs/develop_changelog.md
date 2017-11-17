@@ -1,5 +1,8 @@
 # change_log.md
 
+17-Nov 2017
+* Prepare to merge with branch meetup_101817
+
 Thur 19-Oct 2017 misc
 * #10 Use NPM ecosystem
 * #26 Add codeship status badge 
