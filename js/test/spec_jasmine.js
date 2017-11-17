@@ -25,7 +25,7 @@ console.log("  window:");
 console.dir(window);
 
 
-/** Specifications */  
+/** Specifications */
 function test02() {
 
   describe("Suite test02 on the weatherapp (wa) methods and properties", function() {
@@ -35,23 +35,53 @@ function test02() {
       expect(helloWorld).toBe(true);
     });
 
-    it("wa.version returns alpha-0.0.2", function() {
-      expect( wa.version() ).toMatch("alpha-0.0.2");
+    it("wa.version returns: " + wa.version(), function() {
+      expect( wa.version() ).toMatch("v1.0.0-alpha");
     });
-/*
+
     it("convert Kelvin to Fahrenheit", function() {
-      expect(wa.convert.KtoF('1.00')).toBe("-457.87");
+      expect(wa.convert.KtoF('1.00')).toEqual(-457.87);
     });
 
     it("convert Kelvin to Celsius", function() {
-      expect( wa.convertKtoC('1.00') ).toBe("-272.15");
+      expect(wa.convert.KtoC('1.00')).toEqual(-272.15);
     });
 
-*/    
+    it("convert Celsius to Fahrenheit", function() {
+      expect(wa.convert.CtoF('1.00')).toEqual(33.8);
+    });
+
+    it("convert Celsius to Kelvin", function() {
+      expect(wa.convert.CtoK('1.00')).toEqual(274.15);
+    });
+
+    it("convert Fahrenheit to Kelvin", function() {
+      expect(wa.convert.FtoK('1.00')).toEqual(255.93);
+    });
+
+    it("convert Fahrenheit to Celsius", function() {
+      expect(wa.convert.FtoC('1.00')).toEqual(-17.22);
+    });
+
+    it("convert Fahrenheit to Celsius with decimal number", function() {
+      expect(wa.convert.FtoC('1.1')).toEqual(-17.2);
+    });
+
+    it("wa.fuzzyPicnic currently does nothing", function() {
+      expect(true).toBe(true);
+      pending('TODO :)');
+    });
+
+
+/*
+    QUnit.test("wa.fuzzyPicnic currently does nothing, TODO :)", function(assert) {
+        assert.equal(1===1,true);
+    });
+ */
 
   });//end describe a suite
 
-  
+
 }//end test02
 
 

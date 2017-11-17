@@ -3,10 +3,10 @@
  *      wa.version(); //returns version of this app
  *      wa.init();
  */
- 
-/** Dependencies to import at top level */ 
+
+/** Dependencies to import at top level */
 //import $       from "jQuery";    //add allowed by stealjs?
-//import round10 from "round_ten"; //add allowed by stealjs?
+import round10 from "round_ten"; //add allowed by stealjs
 //import isset   from "phpjs";     //add allowed by stealjs?
 
 console.log("In module weatherapp.js");
@@ -21,9 +21,9 @@ var debugLevel = 1; // 0 no Qunit testing
 var wa = {};
 wa = (function ($) {
     "use strict";
-    
+
     var version = function Version() {
-        return "alpha-0.0.2";        
+        return "v1.0.0-alpha";
     };
 
     var _apiKey = null,
@@ -103,7 +103,7 @@ wa = (function ($) {
                 return Math.round10((n - 32) * 5 / 9, -dp);
             }
         },
-        
+
         decimalPlaces = function (num) {
               //http://stackoverflow.com/questions/10454518/javascript-how-to-retrieve-the-number-of-decimals-of-a-string-number
               var match = (''+num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
