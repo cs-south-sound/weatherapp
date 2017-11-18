@@ -30,11 +30,6 @@ function test02() {
 
   describe("Suite test02 on the weatherapp (wa) methods and properties", function() {
 
-    it("Hello world is true", function() {
-      var helloWorld = true;
-      expect(helloWorld).toBe(true);
-    });
-
     it("wa.version returns: " + wa.version(), function() {
       expect( wa.version() ).toMatch("v1.0.0-alpha");
     });
@@ -67,17 +62,42 @@ function test02() {
       expect(wa.convert.FtoC('1.1')).toEqual(-17.2);
     });
 
+    it("check significant figure rounding convert.FtoC(32.0) should return 0.0", function() {
+      expect(wa.convert.FtoC('32.0')).toEqual(0.0);
+    });
+
+    it("check significant figure rounding convert.FtoC(32.1) should return 0.1", function() {
+      expect(wa.convert.FtoC('32.1')).toEqual(0.1);
+    });
+
+    it("check significant figure rounding convert.FtoC(32.10) should return 0.06", function() {
+      expect(wa.convert.FtoC('32.10')).toEqual(0.06);
+    });
+
+    it("check significant figure rounding convert.FtoC(32.100) should return 0.056", function() {
+      expect(wa.convert.FtoC('32.100')).toEqual(0.056);
+    });
+
+    it("check significant figure rounding convert.CtoF('0.1') should return 32.2", function() {
+      expect(wa.convert.CtoF('0.1')).toEqual(32.2);
+    });
+
+    it("check significant figure rounding convert.CtoF('0.06') should return 32.11", function() {
+      expect(wa.convert.CtoF('0.06')).toEqual(32.11);
+    });
+
+    it("check significant figure rounding convert.CtoF('0.056') should return 32.101", function() {
+      expect(wa.convert.CtoF('0.056')).toEqual(32.101);
+    });
+
+    it("check significant figure rounding convert.CtoF('0.0556') should return 32.1001", function() {
+      expect(wa.convert.CtoF('0.0556')).toEqual(32.1001);
+    });
+
     it("wa.fuzzyPicnic currently does nothing", function() {
       expect(true).toBe(true);
       pending('TODO :)');
     });
-
-
-/*
-    QUnit.test("wa.fuzzyPicnic currently does nothing, TODO :)", function(assert) {
-        assert.equal(1===1,true);
-    });
- */
 
   });//end describe a suite
 
@@ -85,10 +105,4 @@ function test02() {
 }//end test02
 
 
-steal.done().then(function(){
-  //test02(); //run the above test specifications
-});
-
-/*maybe try creating a index.js file and import everything with that ?*/
 export default test02;
-//export { test02 };
