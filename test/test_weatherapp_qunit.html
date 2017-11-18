@@ -11,26 +11,11 @@
           <!--This is where the qunit test results are delivered-->
           <div id="qunit"></div>
           <div id="qunit-fixture"></div>
-          <div><strong>
-             Appears to fail because (I suspect) qunit decides
-             (<a href="https://github.com/qunitjs/qunit/blob/e408b56fac8061f13263a6502ecb3c2ce98f5f0d/reporter/html.js#L38">^ line 38</a>)
-             there is no window object and decides not to load results into the DOM
-             because qunit was loaded by SteelJS?
-          </strong></div>
-
-          <!-- Javascript code coverage with http://blanketjs.org/ -->
-          <!-- Add a 'data-cover' attribute to any source script tags you want covered. 
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/blanket.js/1.1.4/blanket.min.js"></script>
-           -->
-           
-          <!--This is where the qunit tests are retreived from
-          <script src="../js/test/test.js"></script>
-          -->
-
         <!--QQQQQQQQQQQQQ   End Qunit test stuff QQQQQQQQQQQQQQQ-->
+
     <script src="https://cdn.jsdelivr.net/npm/steal@1.5.15/steal.js"
             config="../js/config.js"
-            main="test/test">
+            main="test/qunit/load_SUT_and_qunit">
     </script>
   </body>
 </html>
