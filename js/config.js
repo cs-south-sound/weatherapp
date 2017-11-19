@@ -14,7 +14,7 @@ steal.config( {
      "specs": "./test/spec_jasmine.js",
      "vvD": "https://rawgit.com/NorthDecoder/jsDebugUtility/master/vvD/js/vvD_module.js",
      "qunit": "https://code.jquery.com/qunit/qunit-2.4.0.js", //test framework
-     "specs_qunit":"./test/qunit/spec_qunit.js"
+     "specs_qunit": "./test/qunit/spec_qunit.js"
    }
 
 } );

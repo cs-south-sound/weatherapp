@@ -3,14 +3,19 @@
  *      wa.version(); //returns version of this app
  *      wa.init();
  */
+console.log("In module weatherapp.js");
 
 /** Dependencies to import at top level */
-//import $       from "jQuery";    //add allowed by stealjs?
+import $ from "jQuery";    //add allowed by stealjs?
 import round10 from "round_ten"; //add allowed by stealjs
+//import bootstrap from "bootstrap"; // this crashesq
+
 //import isset   from "phpjs";     //add allowed by stealjs?
 
-console.log("In module weatherapp.js");
-//alert("In module weatherapp.js");
+console.log("  $.fn.jquery: " + $.fn.jquery );
+
+
+
 
 
 var debugLevel = 1; // 0 no Qunit testing
@@ -159,11 +164,14 @@ wa = (function ($) {
             }
         },
 
-        init = function () {
+        init = function ($) {
+            console.log("    In function init");
+
             var wtag = $('.weather');
             var debug = $('.debug');
             var uri;
             var latlon;// latitude+longitude for the url
+            console.log("    In function init calling getUsersPosition");
             getUsersPosition();
 
             if(_userLocation !== undefined ){//location is available
@@ -202,6 +210,7 @@ wa = (function ($) {
 }());
 
 
+/*
 
 document.addEventListener('DOMContentLoaded', function () {
     "use strict";
@@ -209,5 +218,22 @@ document.addEventListener('DOMContentLoaded', function () {
     wa.init();
 }, false);
 
+*/
+
+// helper
+/* */
+function extend(destination, source) {
+  for (var property in source) destination[property] = source[property];
+  return destination;
+}
+
+
+
+steal.done().then(function(){
+  console.log("  In function steal.done");
+  //extend(window, bootstrap);// add indivual functions to window
+
+  wa.init($); // with jquery get location, data, etc onto page
+});
 
 export default wa;
