@@ -1,23 +1,3 @@
-/**
- * Usage:
- *      wa.version(); //returns version of this app
- *      wa.init();
- */
-console.log("In module weatherapp.js");
-
-/** Dependencies to import at top level */
-import $ from "jQuery";    //add allowed by stealjs?
-import round10 from "round_ten"; //add allowed by stealjs
-//import bootstrap from "bootstrap"; // this crashesq
-
-//import isset   from "phpjs";     //add allowed by stealjs?
-
-console.log("  $.fn.jquery: " + $.fn.jquery );
-
-
-
-
-
 var debugLevel = 1; // 0 no Qunit testing
                     // 1 yes Qunit testing
 
@@ -26,9 +6,9 @@ var debugLevel = 1; // 0 no Qunit testing
 var wa = {};
 wa = (function ($) {
     "use strict";
-
+    
     var version = function Version() {
-        return "v1.0.0-alpha";
+        return "alpha-0.0.2";        
     };
 
     var _apiKey = null,
@@ -108,7 +88,7 @@ wa = (function ($) {
                 return Math.round10((n - 32) * 5 / 9, -dp);
             }
         },
-
+        
         decimalPlaces = function (num) {
               //http://stackoverflow.com/questions/10454518/javascript-how-to-retrieve-the-number-of-decimals-of-a-string-number
               var match = (''+num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
@@ -164,14 +144,11 @@ wa = (function ($) {
             }
         },
 
-        init = function ($) {
-            console.log("    In function init");
-
+        init = function () {
             var wtag = $('.weather');
             var debug = $('.debug');
             var uri;
             var latlon;// latitude+longitude for the url
-            console.log("    In function init calling getUsersPosition");
             getUsersPosition();
 
             if(_userLocation !== undefined ){//location is available
@@ -207,33 +184,10 @@ wa = (function ($) {
         fuzzyPicnic: fuzzyPicnic
     };
 
-}());
+}(jQuery));
 
-
-/*
 
 document.addEventListener('DOMContentLoaded', function () {
     "use strict";
-    console.log("DOMContentLoaded detected in weatherapp.js")
     wa.init();
 }, false);
-
-*/
-
-// helper
-/* */
-function extend(destination, source) {
-  for (var property in source) destination[property] = source[property];
-  return destination;
-}
-
-
-
-steal.done().then(function(){
-  console.log("  In function steal.done");
-  //extend(window, bootstrap);// add indivual functions to window
-
-  wa.init($); // with jquery get location, data, etc onto page
-});
-
-export default wa;

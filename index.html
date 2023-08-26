@@ -8,15 +8,16 @@
     <title>TacomaJS Weather App</title>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
 
-    <!-- Latest compiled and minified CSS -->
+
+    <!-- Latest compiled and minified CSS
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
+-->
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/slate/bootstrap.min.css">
 
-    <!-- Latest compiled and minified JavaScript -->
+    <!-- Latest compiled and minified JavaScript     -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -26,31 +27,19 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <!--[endif]-->
 
-    <!-- Significant figure calculations -->
+    <!-- Significant figure calculations
     <script src="https://rawgit.com/Tacoma-JS/significant-figures/develop/sig-figs.js"></script>
+-->
 
-    <!-- Round10 this must be loaded before weatherapp-->
+    <!-- Round10 this must be loaded before weatherapp
     <script src="js/round_ten.js"></script>
-
+-->
     <!-- Some PHP to Javascript converted functions -->
     <script src="js/phpjs.js"></script>
 
-    <!-- main code related to the Tacoma-JS weatherapp -->
+    <!-- main code related to the Tacoma-JS weatherapp
     <script src="js/weatherapp.js" data-cover></script>
-
-
-
-    <!-- TestingTestingTestingTestingTestingTestingTesting -->
-    <!-- TestingTestingTestingTestingTestingTestingTesting -->
-    <!-- Qunit Scripts for testing this web page -->
-    <script src="https://code.jquery.com/qunit/qunit-1.18.0.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.18.0.css">
-
-    <!-- Sinonjs.org Scripts for testing this web page -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.7.3/sinon-min.js"></script>
-
-    <!-- TestingTestingTestingTestingTestingTestingTesting -->
-    <!-- TestingTestingTestingTestingTestingTestingTesting -->
+-->
 
 </head>
 <body>
@@ -65,7 +54,7 @@
                         <!-- This icon will be updated/changed depending upon the current
                              weather conditions
                         -->
-                        <!-- 
+                        <!--
                         <img id="current-weather-icon" src="/icons/weather_symbols/nicubunu/nicubunu-Weather-Symbols-Sun.png" alt="current weather icon" style="height:40px; border-style: dotted; border-width:1px">
                         -->
                         <img id="current-weather-icon" src="iconassets/weather_symbols/nicubunu/Sun.png" alt="current weather icon" style="height:40px; border-style: dotted; border-width:1px">
@@ -124,7 +113,7 @@
                         -->
                     </a><div id="awcc1422729619977" class="aw-widget-current" data-locationkey="41598_PC" data-unit="f" data-language="en-us" data-useip="false" data-uid="awcc1422729619977"></div>
 
-                    <!--  Comment out during debugging to be nice to accuweather 
+                    <!--  Comment out during debugging to be nice to accuweather
                     <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
                     -->
                 </div><!--end class=jumbotron-->
@@ -171,26 +160,11 @@
         <!--output div for troubleshooting validate script $.ajax command result-->
         <div id="log"></div>
 
-
-        <!--QQQQQQQQQQQQQ   Qunit test stuff QQQQQQQQQQQQQQQ-->
-          <!--This is where the qunit test results are delivered-->
-          <div id="qunit"></div>
-          <div id="qunit-fixture"></div>
-
-          <!-- Javascript code coverage with http://blanketjs.org/ -->
-          <!-- Add a 'data-cover' attribute to any source script tags you want covered. -->
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/blanket.js/1.1.4/blanket.min.js"></script>
-
-          <!--This is where the qunit tests are retreived from-->
-          <script src="test/test.js"></script>
-
-        <!--QQQQQQQQQQQQQ   End Qunit test stuff QQQQQQQQQQQQQQQ-->
-
-        <!--Run the html validation test against the markup of current page-->
-        <!--
-        <script src="test/test_valid_html.js"></script>
-        <div id="validation_log"></div>
-        -->
     </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/steal@1.5.15/steal.js"
+          config="../js/config.js"
+          main="weatherapp">
+  </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "name": "tacoma-js-weatherapp",
-  "version": "alpha-0.0.3",
+  "version": "v1.0.0-alpha",
   "description": "A sandbox promoting group member particiation in best practices in state-of-the-art project design, coding and code project management",
   "main": "index.js",
   "directories": {
